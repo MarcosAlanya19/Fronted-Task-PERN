@@ -1,6 +1,7 @@
 import { Button, Card, CardContent, Typography } from '@mui/material';
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { ITaskData } from '../interfaces/tasks.interfaces';
 
 const TaskList = () => {
   const navigate = useNavigate()

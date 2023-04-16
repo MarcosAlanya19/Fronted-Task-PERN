@@ -1,6 +1,7 @@
 import { Button, Card, CardContent, CircularProgress, Grid, TextField, Typography } from '@mui/material';
 import { FormEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { TTaskForm } from '../interfaces/tasks.interfaces';
 
 const TaskForm = () => {
   const [task, setTask] = useState<TTaskForm>({ title: '', description: '' });
