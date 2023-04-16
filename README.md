@@ -11,6 +11,8 @@ Esta es una aplicación con el stack **`PERN`**, para realizar un crud, con esti
 - **`react-dom`**: proporciona la integración de React con el DOM.
 - **`react-router-dom`**: una biblioteca de enrutamiento para React que permite la navegación entre diferentes componentes.
 
+# ENV:
+- VITE_URL_API= web de backend
 
 # Componente Navbar
 Este componente es una barra de navegación que muestra el título de la aplicación y un botón para crear una nueva tarea. Se usa la biblioteca Material-UI y React Router Dom para crear los elementos de la barra de navegación y el enrutamiento, respectivamente.
