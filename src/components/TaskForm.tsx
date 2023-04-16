@@ -1,6 +1,7 @@
 import { Button, Card, CardContent, CircularProgress, Grid, TextField, Typography } from '@mui/material';
 import { FormEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { config } from '../config';
 import { TTaskForm } from '../interfaces/tasks.interfaces';
 
 const TaskForm = () => {
@@ -17,7 +18,7 @@ const TaskForm = () => {
   }, [param.id]);
 
   const loadTask = async (id: string): Promise<void> => {
-    const res = await fetch(`http://localhost:3000/api/tasks/${id}`);
+    const res = await fetch(`${config.URL_API}/api/tasks/${id}`);
     const data = await res.json();
     setTask({ title: data.title, description: data.description });
     setEditing(true)
@@ -28,7 +29,7 @@ const TaskForm = () => {
     e.preventDefault()
 
     if (editing) {
-      await fetch(`http://localhost:3000/api/tasks/${param.id}`, {
+      await fetch(`${config.URL_API}/api/tasks/${param.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -36,7 +37,7 @@ const TaskForm = () => {
         body: JSON.stringify(task)
       })
     } else {
-      await fetch('http://localhost:3000/api/tasks', {
+      await fetch(`${config.URL_API}/api/tasks`, {
         method: 'POST',
         body: JSON.stringify(task),
         headers: { 'Content-Type': 'application/json' }
